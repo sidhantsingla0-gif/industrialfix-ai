@@ -1,5 +1,6 @@
-import app from "./app.js";
+import app from './app.js';
+import env from './config/env.js';
 
-app.listen(5000, () => {
-  console.log('API running on http://localhost:5000');
+app.listen(env.port, () => {
+  console.log(`API running on http://localhost:${env.port} (${env.nodeEnv})`);
 });
