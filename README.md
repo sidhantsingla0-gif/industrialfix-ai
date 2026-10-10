@@ -34,7 +34,7 @@ flowchart LR
 ## Roadmap
 
 - [x] Phase 1: Repository and planning
-- [ ] Phase 2: Backend initialization
+- [x] Phase 2: Backend initialization
 - [ ] Phase 3: Database and models
 - [ ] Phase 4: Authentication
 - [ ] Phase 5: Machine management
