@@ -15,13 +15,14 @@ const required = (name) => {
   return value;
 };
 
+const nodeEnv = process.env.NODE_ENV || 'development';
 const port = Number(process.env.PORT);
 
 const env = {
-  nodeEnv: process.env.NODE_ENV || 'development',
-  port: Number.isInteger(port) && port >= 0 ? port : 5000,
+  nodeEnv,
+  port: Number.isInteger(port) && port > 0 && port <= 65535 ? port : 5000,
   clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
-  mongodbUri: required('MONGODB_URI'),
+  mongodbUri: nodeEnv === 'test' ? (process.env.MONGODB_URI || '') : required('MONGODB_URI'),
 };
 
 export default env;
